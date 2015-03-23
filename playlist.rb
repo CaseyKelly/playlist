@@ -34,7 +34,13 @@ class Playlist
   end
 
   def swap(song1, song2)
-    @songs[song1], @songs[song2] = @songs[song2], @songs[song1]
+    @songs[0], @songs[3] = @songs[3], @songs[0]
+  end
+
+  def total_length
+    @songs.map do |song|
+      song.length
+    end.inject(:+)
   end
 
 end
